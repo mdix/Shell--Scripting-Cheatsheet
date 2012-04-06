@@ -1,0 +1,44 @@
+#!/bin/bash
+# SEE THIS LIST FOR ALL EXPRESSIONS: http://bit.ly/HrSdCQ
+# STRINGS:     s1 = s2 | s1 != s2 | s1 < s2 | s1 > s2 | -n s1 (not null) | -z s1 (is null)
+# ARITHMETICS: i1 -lt i2 (<) | i1 -gt i2 (>) | i1 -le i2 (<=) | i1 -ge i2 (>=) | i1 -eq i2 (==) | i1 -ne i2 (!=)
+# SCRIPT SHALL IMMEDIATELY ABORT ON ERROR
+set -e
+# FOR LOOP
+for i in $( ls ); do
+    echo item: $i
+done
+# WHILE LOOP
+COUNTER=0
+while [  $COUNTER -lt 10 ]; do
+    echo The counter is $COUNTER
+    let COUNTER=COUNTER+1 
+done
+# UNTIL LOOP
+COUNTER=20
+until [  $COUNTER -lt 10 ]; do
+    echo COUNTER $COUNTER
+    let COUNTER-=1
+done
+# IF THEN ELSE
+if [ "42" = "42" ]; then
+    echo expression evaluated as true
+else
+    echo expression evaluated as false
+fi
+# FUNCTION
+function myFunc {
+    echo $1 
+}
+myFunc "Hello World"
+# PIPE
+ls -l | sed -e "s/[aeio]/u/g"
+# ECHO
+echo text with newline
+echo -n omit newline
+# GREP CAN READ FILES
+grep "READ FILES" basics
+# ARRAY
+COLORS=('Blue' 'Red')
+echo ${COLORS[0]}
+# REG EXP: sed -or- egrep (grep -e)
