@@ -8,6 +8,10 @@ set -e
 for i in $( ls ); do
     echo item: $i
 done
+# FOR LOOP (C STYLE)
+for ((x = 0 ; x <= 100 ; x++)); do
+  echo "Counter: $x"
+done
 # WHILE LOOP
 COUNTER=0
 while [  $COUNTER -lt 10 ]; do
