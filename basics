@@ -25,8 +25,10 @@ until [  $COUNTER -lt 10 ]; do
     let COUNTER-=1
 done
 # IF THEN ELSE
-if [ "42" = "42" ]; then
-    echo expression evaluated as true
+if [ "42" = "41" ]; then
+    echo expression in if evaluated as true
+elif [ "32" = "32" ]; then
+    echo expression in elif evaluated as true
 else
     echo expression evaluated as false
 fi
