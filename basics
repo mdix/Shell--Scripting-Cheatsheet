@@ -16,7 +16,7 @@ done
 COUNTER=0
 while [  $COUNTER -lt 10 ]; do
     echo The counter is $COUNTER
-    let COUNTER=COUNTER+1 
+    let COUNTER+=1 
 done
 # UNTIL LOOP
 COUNTER=20
@@ -32,11 +32,25 @@ elif [ "32" = "32" ]; then
 else
     echo expression evaluated as false
 fi
+# SWITCH
+case $VAR in
+    value1)
+        #on value1
+        ;;
+    value2)
+        #on value2
+        ;;
+    *)
+        #on default
+        ;;;
+ esac
 # FUNCTION
 function myFunc {
     echo $1 
 }
 myFunc "Hello World"
+# or catch the output
+RETURNVAL=$(myFunc "Hello World")
 # PIPE
 ls -l | sed -e "s/[aeio]/u/g"
 # ECHO
@@ -44,7 +58,14 @@ echo text with newline
 echo -n omit newline
 # GREP CAN READ FILES
 grep "READ FILES" basics
-# ARRAY
+# ARRAY (whitespace separated!!)
 COLORS=('Blue' 'Red')
 echo ${COLORS[0]}
+# length
+${#COLORS[@]}
 # REG EXP: sed -or- egrep (grep -e)
+# CALCULATION INT
+let (SUM=1+2) #OR:   echo $((1+2))
+echo $SUM
+# CALCULATION FLOAT
+bc -l <<< "1.1+2.2"
