@@ -65,7 +65,7 @@ echo ${COLORS[0]}
 ${#COLORS[@]}
 # REG EXP: sed -or- egrep (grep -e)
 # CALCULATION INT
-let (SUM=1+2) #OR:   echo $((1+2))
+let "SUM=1+2" #OR:   echo $((1+2))
 echo $SUM
 # CALCULATION FLOAT
 bc -l <<< "1.1+2.2"
