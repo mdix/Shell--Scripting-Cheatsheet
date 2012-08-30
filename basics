@@ -39,7 +39,7 @@ case $VAR in
         ;;
     value2)
         #on value2
-        ;;
+        ;;& #falls trough
     *)
         #on default
         ;;;
