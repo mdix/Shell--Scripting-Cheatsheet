@@ -8,6 +8,8 @@ set -e
 for i in $( ls ); do
     echo item: $i
 done
+# ONE LINE FOR LOOP
+for i in $( ls ); do echo item: $i; done
 # FOR LOOP (C STYLE)
 for ((x = 0 ; x <= 100 ; x++)); do
   echo "Counter: $x"
